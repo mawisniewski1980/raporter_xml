@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.ingbank.visiona.tests.pages.login.LoginPageBOTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-07-11T12:06:23" hostname="WPPLL0002483" time="20.9">
+  <properties/>
+  <testcase name="logInBackOfficeAsMasterUser()" classname="pl.ingbank.visiona.tests.pages.login.LoginPageBOTests" time="14.999"/>
+  <testcase name="logInBackOfficeAsVtest1User()" classname="pl.ingbank.visiona.tests.pages.login.LoginPageBOTests" time="5.901"/>
+  <system-out><![CDATA[14:06:22.749 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.a.AbstractTest - Before all tests in class (once) ... 
+14:06:22.749 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.a.AbstractTest - Before all tests in class (once) ... 
+14:06:23.812 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.p.l.LoginPageFOTests - ... before each test in class ...
+14:06:23.812 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.p.l.LoginPageBOTests - ... before each test in class ...
+14:06:37.859 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.a.AbstractTest - ... after each test in class ...
+14:06:37.859 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.a.AbstractPage - Logout from page.
+14:06:38.251 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.a.AbstractTest - ... after each test in class ...
+14:06:38.252 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.a.AbstractPage - Logout from page.
+14:06:38.811 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.p.l.LoginPageBOTests - ... before each test in class ...
+14:06:43.962 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.a.AbstractTest - ... after each test in class ...
+14:06:43.963 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.a.AbstractPage - Logout from page.
+14:06:44.260 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.a.AbstractTest - ... after each test in class ...
+14:06:44.260 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.a.AbstractPage - Logout from page.
+14:06:44.704 [ForkJoinPool-1-worker-2] INFO  p.i.v.t.a.AbstractTest - ... after all tests in class (once)
+]]></system-out>
+  <system-err><![CDATA[lip 11, 2019 2:06:23 PM com.codeborne.selenide.drivercommands.LazyDriver getAndCheckWebDriver
+INFO: No webdriver is bound to current thread: 14 - let's create a new webdriver
+lip 11, 2019 2:06:23 PM com.codeborne.selenide.drivercommands.LazyDriver getAndCheckWebDriver
+INFO: No webdriver is bound to current thread: 15 - let's create a new webdriver
+Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}) on port 11893
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}) on port 35884
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1562846787.935][WARNING]: This version of ChromeDriver has not been tested with Chrome version 75.
+[1562846787.937][WARNING]: This version of ChromeDriver has not been tested with Chrome version 75.
+lip 11, 2019 2:06:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+lip 11, 2019 2:06:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=75.0.3770.100 Platform=XP
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 5.2.3
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.drivercommands.CreateDriverCommand createDriver
+INFO: Create webdriver in current thread 15: ChromeDriver -> ChromeDriver: chrome on XP (84937ef0f27805e2e14c519e6522be75)
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.webdriver.WebDriverFactory logBrowserVersion
+INFO: BrowserName=chrome Version=75.0.3770.100 Platform=XP
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.webdriver.WebDriverFactory createWebDriver
+INFO: Selenide v. 5.2.3
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.webdriver.WebDriverFactory logSeleniumInfo
+INFO: Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+lip 11, 2019 2:06:30 PM com.codeborne.selenide.drivercommands.CreateDriverCommand createDriver
+INFO: Create webdriver in current thread 14: ChromeDriver -> ChromeDriver: chrome on XP (20d241ae04aa5b54d174894dbdd88f86)
+]]></system-err>
+</testsuite>
