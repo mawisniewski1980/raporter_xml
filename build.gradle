@@ -22,7 +22,7 @@ task buildJar(type: Jar) {
                     'Main-Class': 'Raport'
     }
     archivesBaseName = project.name
-    destinationDir = file('C:\\Users\\\Public\\jar')
+    destinationDir = file('C:\\Users\\Public\\jar')
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }

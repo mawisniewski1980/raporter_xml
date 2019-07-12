@@ -66,6 +66,14 @@ public class Raport {
              testSuites.add(parser.readTestSuite(raport.getPathRead() + "\\" + file));
         });
 
-        System.out.println(testSuites);
+        testSuites.forEach(testSuite -> {
+            System.out.println(testSuite.getName());
+            System.out.println(testSuite.getTime());
+        });
+
+        testSuites.get(0).getTestCases().forEach(testCase -> {
+            System.out.println(testCase.getName());
+            System.out.println(testCase.getTime());
+        });
     }
 }
