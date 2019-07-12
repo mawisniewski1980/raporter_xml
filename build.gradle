@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'pl.raporter'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+task buildJar(type: Jar) {
+    version = ''
+    manifest {
+        attributes 'Manifest-Version': '2.0',
+                    'Main-Class': 'Raport'
+    }
+    archivesBaseName = project.name
+    destinationDir = file('C:\\Users\\\Public\\jar')
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
