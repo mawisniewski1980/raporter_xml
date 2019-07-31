@@ -13,6 +13,11 @@ public class Raport {
     private List<String> files = new ArrayList<>();
     private static List<TestSuite> testSuites = new ArrayList<>();
 
+    private int testsSum;
+    private int skippedSum;
+    private int failuresSum;
+    private int errorsSum;
+
     public Raport() {
     }
 
@@ -43,6 +48,23 @@ public class Raport {
         Collections.sort(files);
     }
 
+    private void prepareFiles(final String pathRead) {
+        TestXParser parser = new TestXParser();
+        listAllFiles(pathRead, ".xml");
+        getFiles().forEach(file -> {
+            testSuites.add(parser.readTestSuite(getPathRead() + "\\" + file));
+        });
+    }
+
+    private void agregateData(List<TestSuite> testSuites) {
+
+        testsSum = testSuites.stream().mapToInt(test -> Integer.parseInt(test.getTests())).sum();
+        skippedSum = testSuites.stream().mapToInt(skip -> Integer.parseInt(skip.getSkipped())).sum();
+        failuresSum = testSuites.stream().mapToInt(fail -> Integer.parseInt(fail.getFailures())).sum();
+        errorsSum = testSuites.stream().mapToInt(err -> Integer.parseInt(err.getErrors())).sum();
+
+    }
+
     public String getPathRead() {
         return pathRead;
     }
@@ -55,25 +77,38 @@ public class Raport {
         return files;
     }
 
-    public static void main(String[] args) throws JAXBException  {
+    public int getTestsSum() {
+        return testsSum;
+    }
+
+    public int getSkippedSum() {
+        return skippedSum;
+    }
+
+    public int getFailuresSum() {
+        return failuresSum;
+    }
+
+    public int getErrorsSum() {
+        return errorsSum;
+    }
+
+    public List<TestSuite> getTestSuites() {
+        return testSuites;
+    }
+
+    public static void main(String[] args)  {
 
         Raport raport = new Raport();
-        TestXParser parser = new TestXParser();
-
         raport.initArguments(args);
-        raport.listAllFiles(raport.getPathRead(),".xml" );
-        raport.getFiles().forEach(file -> {
-             testSuites.add(parser.readTestSuite(raport.getPathRead() + "\\" + file));
-        });
+        raport.prepareFiles(raport.getPathRead());
+        raport.agregateData(testSuites);
 
-        testSuites.forEach(testSuite -> {
-            System.out.println(testSuite.getName());
-            System.out.println(testSuite.getTime());
-        });
+        System.out.println(raport.getTestsSum());
+        System.out.println(raport.getSkippedSum());
+        System.out.println(raport.getFailuresSum());
+        System.out.println(raport.getErrorsSum());
 
-        testSuites.get(0).getTestCases().forEach(testCase -> {
-            System.out.println(testCase.getName());
-            System.out.println(testCase.getTime());
-        });
+        System.out.println(raport.getTestSuites());
     }
 }

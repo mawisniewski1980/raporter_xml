@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA40Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-30T06:14:13" hostname="WPPLD0002613" time="57.51">
+  <properties/>
+  <testcase name="debitDetalCardProxy_A40_21()" classname="pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA40Tests" time="57.51"/>
+  <system-out><![CDATA[08:14:13.997 [ForkJoinPool-1-worker-1] INFO  p.i.v.t.p.p.DebitDetalCardsA40Tests - User Login. Page 'Awaryjna obsługa kart dla detalu' is opened.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

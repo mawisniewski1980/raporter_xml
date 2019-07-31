@@ -4,6 +4,10 @@ public class TestCase {
     private String classname;
     private String time;
 
+    private String failure;
+    private String message;
+    private String type;
+
     public TestCase() {
     }
 
@@ -31,12 +35,40 @@ public class TestCase {
         this.time = time;
     }
 
+    public String getFailure() {
+        return failure;
+    }
+
+    public void setFailure(String failure) {
+        this.failure = failure;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
     @Override
     public String toString() {
         return "TestCase{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", classname='" + classname + '\'' +
                 ", time='" + time + '\'' +
+                ", failure='" + failure + '\'' +
+                ", message='" + message + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

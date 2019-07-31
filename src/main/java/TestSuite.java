@@ -120,8 +120,8 @@ public class TestSuite {
                 ", hostname='" + hostname + '\'' +
                 ", time='" + time + '\'' +
                 ", testCases=" + testCases +
-                ", systemOut='" + systemOut + '\'' +
-                ", systemError='" + systemError + '\'' +
+                //", systemOut='" + systemOut + '\'' +
+                //", systemError='" + systemError + '\'' +
                 '}';
     }
 }

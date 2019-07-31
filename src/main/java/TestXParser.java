@@ -25,6 +25,10 @@ public class TestXParser {
     static final String TIME = "time";
     static final String TESTCASE = "testcase";
     static final String CLASSNAME = "classname";
+    static final String FAILURE = "failure";
+    static final String MESSAGE = "message";
+    static final String TYPE = "type";
+
     static final String SYSTEMOUT = "system-out";
     static final String SYSTEMERR = "system-err";
 
@@ -102,24 +106,42 @@ public class TestXParser {
                             Attribute attribute = attributes.next();
 
                             if (attribute.getName().toString().equals(NAME)) {
-                                //System.out.println(attribute.getValue());
                                 testCase.setName(attribute.getValue());
-
                             }
 
                             if (attribute.getName().toString().equals(CLASSNAME)) {
-                                //System.out.println(attribute.getValue());
                                 testCase.setClassname(attribute.getValue());
                             }
 
                             if (attribute.getName().toString().equals(TIME)) {
-                                //System.out.println(attribute.getValue());
                                 testCase.setTime(attribute.getValue());
                             }
 
                         }
 
                         testSuite.getTestCases().add(testCase);
+
+                    }
+
+                    if(startElement.getName().getLocalPart().equals(FAILURE)) {
+
+                        event = eventReader.nextEvent();
+                        testCase.setFailure(event.asCharacters().getData());
+
+                        Iterator<Attribute> attributes = startElement.getAttributes();
+
+                        while (attributes.hasNext()) {
+
+                            Attribute attribute = attributes.next();
+
+                            if (attribute.getName().toString().equals(MESSAGE)) {
+                                testCase.setMessage(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(TYPE)) {
+                                testCase.setType(attribute.getValue());
+                            }
+                        }
 
                     }
 
