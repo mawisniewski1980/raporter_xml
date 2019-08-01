@@ -13,8 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TestXParser {
-
-    static final String TESTSUITE = "testsuite";
+ static final String TESTSUITE = "testsuite";
     static final String NAME = "name";
     static final String TESTS = "tests";
     static final String SKIPPED = "skipped";
@@ -53,48 +52,48 @@ public class TestXParser {
 
                     if(startElement.getName().getLocalPart().equals(TESTSUITE)) {
 
-                          testSuite = new TestSuite();
+                        testSuite = new TestSuite();
 
-                          Iterator<Attribute> attributes = startElement.getAttributes();
+                        Iterator<Attribute> attributes = startElement.getAttributes();
 
-                            while (attributes.hasNext()) {
+                        while (attributes.hasNext()) {
 
-                                Attribute attribute = attributes.next();
+                            Attribute attribute = attributes.next();
 
-                                if (attribute.getName().toString().equals(NAME)) {
-                                    testSuite.setName(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(TESTS)) {
-                                    testSuite.setTests(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(SKIPPED)) {
-                                    testSuite.setSkipped(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(FAILURES)) {
-                                    testSuite.setFailures(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(ERRORS)) {
-                                    testSuite.setErrors(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(TIMESTAMP)) {
-                                    testSuite.setTimestamp(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(HOSTNAME)) {
-                                    testSuite.setHostname(attribute.getValue());
-                                }
-
-                                if (attribute.getName().toString().equals(TIME)) {
-                                    testSuite.setTime(attribute.getValue());
-                                }
-
+                            if (attribute.getName().toString().equals(NAME)) {
+                                testSuite.setName(attribute.getValue());
                             }
+
+                            if (attribute.getName().toString().equals(TESTS)) {
+                                testSuite.setTests(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(SKIPPED)) {
+                                testSuite.setSkipped(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(FAILURES)) {
+                                testSuite.setFailures(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(ERRORS)) {
+                                testSuite.setErrors(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(TIMESTAMP)) {
+                                testSuite.setTimestamp(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(HOSTNAME)) {
+                                testSuite.setHostname(attribute.getValue());
+                            }
+
+                            if (attribute.getName().toString().equals(TIME)) {
+                                testSuite.setTime(attribute.getValue());
+                            }
+
                         }
+                    }
 
                     if(startElement.getName().getLocalPart().equals(TESTCASE)) {
 
@@ -125,8 +124,23 @@ public class TestXParser {
 
                     if(startElement.getName().getLocalPart().equals(FAILURE)) {
 
-                        event = eventReader.nextEvent();
-                        testCase.setFailure(event.asCharacters().getData());
+                        StringBuilder builder = new StringBuilder();
+
+                        while (true) {
+                            event = eventReader.nextEvent();
+                            if (event.isEndElement()) {
+                                break;
+                            }
+                            else if (!event.isCharacters()) {
+                                throw new XMLStreamException("Unexpected non-text event: " + event);
+                            }
+                            Characters characters = event.asCharacters();
+                            if (!characters.isIgnorableWhiteSpace()) {
+                                builder.append(event.asCharacters().getData());
+                            }
+                        }
+                        testCase.setFailure(builder.toString());
+
 
                         Iterator<Attribute> attributes = startElement.getAttributes();
 
@@ -163,8 +177,6 @@ public class TestXParser {
                     }
                 }
 
-
-
             }
 
         } catch (FileNotFoundException e) {
@@ -175,5 +187,6 @@ public class TestXParser {
 
         return testSuite;
     }
+
 
 }
