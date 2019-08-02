@@ -13,7 +13,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TestXParser {
- static final String TESTSUITE = "testsuite";
+
+    static final String TESTSUITE = "testsuite";
     static final String NAME = "name";
     static final String TESTS = "tests";
     static final String SKIPPED = "skipped";
@@ -187,6 +188,4 @@ public class TestXParser {
 
         return testSuite;
     }
-
-
 }
