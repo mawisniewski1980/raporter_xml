@@ -17,6 +17,7 @@ public class Raport {
     private int skippedSum;
     private int failuresSum;
     private int errorsSum;
+    private int positiveTestSum;
 
     public Raport() {
     }
@@ -62,7 +63,7 @@ public class Raport {
         skippedSum = testSuites.stream().mapToInt(skip -> Integer.parseInt(skip.getSkipped())).sum();
         failuresSum = testSuites.stream().mapToInt(fail -> Integer.parseInt(fail.getFailures())).sum();
         errorsSum = testSuites.stream().mapToInt(err -> Integer.parseInt(err.getErrors())).sum();
-
+        positiveTestSum = testsSum-failuresSum-errorsSum-skippedSum;
     }
 
     public String getPathRead() {
@@ -93,6 +94,10 @@ public class Raport {
         return errorsSum;
     }
 
+    public int getPositiveTestSum() {
+        return positiveTestSum;
+    }
+
     public List<TestSuite> getTestSuites() {
         return testSuites;
     }
@@ -105,10 +110,12 @@ public class Raport {
         raport.agregateData(testSuites);
 
         System.out.println(raport.getTestsSum());
+        System.out.println(raport.getPositiveTestSum());
         System.out.println(raport.getSkippedSum());
         System.out.println(raport.getFailuresSum());
         System.out.println(raport.getErrorsSum());
 
         System.out.println(raport.getTestSuites());
+
     }
 }
