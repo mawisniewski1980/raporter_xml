@@ -1,6 +1,5 @@
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,12 +12,13 @@ public class Raport {
     private String pathWrite;
     private List<String> files = new ArrayList<>();
     private static List<TestSuite> testSuites = new ArrayList<>();
-    private static final String EMAIL_FILE_RAPORT = "emailEmbedded.html";
+    private static String EMAIL_FILE_RAPORT = "email.html";
 
     private int testsSum;
     private int skippedSum;
     private int failuresSum;
     private int errorsSum;
+    private int positiveTestSum;
 
     public Raport() {
     }
@@ -64,7 +64,14 @@ public class Raport {
         skippedSum = testSuites.stream().mapToInt(skip -> Integer.parseInt(skip.getSkipped())).sum();
         failuresSum = testSuites.stream().mapToInt(fail -> Integer.parseInt(fail.getFailures())).sum();
         errorsSum = testSuites.stream().mapToInt(err -> Integer.parseInt(err.getErrors())).sum();
+        positiveTestSum = testsSum-failuresSum-errorsSum-skippedSum;
+    }
 
+    private String createHtmlRaport() {
+
+        StringBuffer stringHtmlRaport = new StringBuffer();
+
+        return stringHtmlRaport.toString();
     }
 
     private void writeHtmlRaport(String raport) throws IOException {
@@ -76,6 +83,8 @@ public class Raport {
             Files.deleteIfExists(path);
             //Files.write(path, raport.getBytes(StandardCharsets.UTF_8));
             Files.write(path, raport.getBytes());
+        } else {
+            throw new IOException("Brak danych do raportu");
         }
     }
 
@@ -107,6 +116,10 @@ public class Raport {
         return errorsSum;
     }
 
+    public int getPositiveTestSum() {
+        return positiveTestSum;
+    }
+
     public List<TestSuite> getTestSuites() {
         return testSuites;
     }
@@ -114,15 +127,23 @@ public class Raport {
     public static void main(String[] args)  {
 
         Raport raport = new Raport();
-        raport.initArguments(args);
-        raport.prepareFiles(raport.getPathRead());
-        raport.agregateData(testSuites);
+        try {
+            raport.initArguments(args);
+            raport.prepareFiles(raport.getPathRead());
+            raport.agregateData(testSuites);
+            raport.writeHtmlRaport(raport.createHtmlRaport());
 
-        System.out.println(raport.getTestsSum());
-        System.out.println(raport.getSkippedSum());
-        System.out.println(raport.getFailuresSum());
-        System.out.println(raport.getErrorsSum());
+            System.out.println(raport.getTestsSum());
+            System.out.println(raport.getPositiveTestSum());
+            System.out.println(raport.getSkippedSum());
+            System.out.println(raport.getFailuresSum());
+            System.out.println(raport.getErrorsSum());
 
-        System.out.println(raport.getTestSuites().get(2));
+            System.out.println(raport.getTestSuites());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
