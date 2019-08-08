@@ -1,5 +1,6 @@
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,6 +13,7 @@ public class Raport {
     private String pathWrite;
     private List<String> files = new ArrayList<>();
     private static List<TestSuite> testSuites = new ArrayList<>();
+    private static final String EMAIL_FILE_RAPORT = "emailEmbedded.html";
 
     private int testsSum;
     private int skippedSum;
@@ -65,6 +67,18 @@ public class Raport {
 
     }
 
+    private void writeHtmlRaport(String raport) throws IOException {
+
+        if (raport != null && !raport.isEmpty()) {
+            Path path = Paths.get(pathWrite);
+            Files.createDirectories(path);
+            path = Paths.get(this.getPathWrite() + "\\" + EMAIL_FILE_RAPORT);
+            Files.deleteIfExists(path);
+            //Files.write(path, raport.getBytes(StandardCharsets.UTF_8));
+            Files.write(path, raport.getBytes());
+        }
+    }
+
     public String getPathRead() {
         return pathRead;
     }
@@ -109,6 +123,6 @@ public class Raport {
         System.out.println(raport.getFailuresSum());
         System.out.println(raport.getErrorsSum());
 
-        System.out.println(raport.getTestSuites());
+        System.out.println(raport.getTestSuites().get(2));
     }
 }

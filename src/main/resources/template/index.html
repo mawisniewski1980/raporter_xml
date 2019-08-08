@@ -6,36 +6,38 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Raport z wykonania testów automatycznych</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-
     </head>
-    <body class="font-size: 14px;">
+    <body bgcolor="#f0f0f0">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-            <div style="margin: 0%; padding: 5px; width: 100%;">
-                
-                <p style="color: #FF6200; font-size: 12px;">Dzienny raport z wykonania testów automatycznych: <span style="font-weight: 700;">2019-08-05 22:38</span></p>
 
-                <hr>
-
-                <div style="font-size: 10px;">
-                    <p style="">Ilość testów: 51</p>
-                    <p style="color: green">Testy pozytywne: 24</p>
-                    <p style="color: red">Testy negatywne: 27</p>
-                    <p style="color: orange">Testy pominięte: 0</p>
-                    <p style="color: purple">Testy błędne: 0</p>
-                </div>
-
-                <hr>
-
-                <p style="color: #FF6200; font-size: 12px;">Błędy:</p>
-            
-            </div>
+        <table cellspacing="1" cellpadding="2" border="0" width="100%">
+            <tr align="left"><td align="center">Raport z wykonania testów automatycznych: <b>2019-08-05 22:38</b><hr></td></tr>
+            <tr align="left"><td>Ilość testów: <b>51</b>, Testy pozytywne: <b>24</b>, Testy negatywne: <b>27</b>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b><hr></td></tr>
+            <tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitCorpoCardsA68Tests</b>, Godzina: <b>2019-07-30T06:14:14</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>276.715</b></td></tr>
+            <tr align="left">
+                <td>
+                    <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                        <tr bgcolor="#A9A9A9">
+                            <td>Test</td>
+                            <td>Czas</td>
+                            <td>Typ</td>
+                            <td>Błąd</td>
+                        </tr>
+                        <tr bgcolor="#cecccc">
+                            <td>debitCorpoCardLT_A68_418()</td>
+                            <td>47.127</td>
+                            <td>com.codeborne.selenide.ex.ElementShould</td>
+                            <td>Element should have match text 'LT - Card restricted - lost' {a[id='form:csClientStatusHistLink']}&#10;Element: '&lt;a class=&quot;cardInactive&quot; href=&quot;#&quot; id=&quot;form:csClientStatusHistLink&quot; name=&quot;form:csClientStatusHistLink&quot; onclick=&quot;jsf.util.chain(this,event,&quot;stopEventPropagation(event)&quot;,&quot;RichFaces.ajax(\&quot;form:csClientStatusHistLink\&quot;,event,{\&quot;incId\&quot;:\&quot;1\&quot;,\&quot;status\&quot;:\&quot;waitStatus\&quot;} )&quot;);return false;&quot;&gt;Z - Card waiting for production&lt;/a&gt;'&#10;Timeout: 9 s.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
 
         <!--<script src="" async defer></script>-->
     </body>
