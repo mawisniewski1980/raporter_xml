@@ -70,7 +70,19 @@ public class Raport {
     private String createHtmlRaport() {
 
         StringBuffer stringHtmlRaport = new StringBuffer();
+        stringHtmlRaport.append(Template.HEADER_HTML);
+        stringHtmlRaport.append(Template.RAPORT_HEADER);
+        stringHtmlRaport.append(Template.RAPORT_AGREGATES);
 
+        //dynamic
+        stringHtmlRaport.append(Template.RAPORT_CLASS_SUITE);
+
+        stringHtmlRaport.append(Template.RAPORT_TEST_HEADER);
+
+        //dynamic
+        stringHtmlRaport.append(Template.RAPORT_TESTS);
+
+        stringHtmlRaport.append(Template.FOOTER_HTML);
         return stringHtmlRaport.toString();
     }
 
