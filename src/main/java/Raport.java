@@ -71,11 +71,12 @@ public class Raport {
 
         StringBuffer stringHtmlRaport = new StringBuffer();
         stringHtmlRaport.append(Template.HEADER_HTML);
-        stringHtmlRaport.append(Template.RAPORT_HEADER);
-        stringHtmlRaport.append(Template.RAPORT_AGREGATES);
+
+        stringHtmlRaport.append(String.format(Template.RAPORT_HEADER, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))));
+        stringHtmlRaport.append(String.format(Template.RAPORT_AGREGATES, testsSum, positiveTestSum, failuresSum, skippedSum, errorsSum));
 
         //dynamic
-        stringHtmlRaport.append(Template.RAPORT_CLASS_SUITE);
+        testSuites.forEach(suite -> stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_SUITE, suite.getName(), suite.getTimestamp(), suite.getHostname(), suite.getTime())));
 
         stringHtmlRaport.append(Template.RAPORT_TEST_HEADER);
 
@@ -112,46 +113,16 @@ public class Raport {
         return files;
     }
 
-    public int getTestsSum() {
-        return testsSum;
-    }
-
-    public int getSkippedSum() {
-        return skippedSum;
-    }
-
-    public int getFailuresSum() {
-        return failuresSum;
-    }
-
-    public int getErrorsSum() {
-        return errorsSum;
-    }
-
-    public int getPositiveTestSum() {
-        return positiveTestSum;
-    }
-
-    public List<TestSuite> getTestSuites() {
-        return testSuites;
-    }
-
     public static void main(String[] args)  {
 
         Raport raport = new Raport();
         try {
+
             raport.initArguments(args);
             raport.prepareFiles(raport.getPathRead());
             raport.agregateData(testSuites);
             raport.writeHtmlRaport(raport.createHtmlRaport());
 
-            System.out.println(raport.getTestsSum());
-            System.out.println(raport.getPositiveTestSum());
-            System.out.println(raport.getSkippedSum());
-            System.out.println(raport.getFailuresSum());
-            System.out.println(raport.getErrorsSum());
-
-            System.out.println(raport.getTestSuites());
         } catch (Exception e) {
             e.printStackTrace();
         }
