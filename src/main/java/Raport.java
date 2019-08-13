@@ -81,7 +81,7 @@ public class Raport {
 
 
                 stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_SUITE, testSuites.get(i).getName(), testSuites.get(i).getTimestamp(), testSuites.get(i).getHostname(), testSuites.get(i).getTime()));
-                stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_AGREGATES, testSuites.get(i).getTests(), Integer.parseInt(testSuites.get(i).getTests())-Integer.parseInt(testSuites.get(i).getFailures())-Integer.parseInt(testSuites.get(i).getErrors())-Integer.parseInt(testSuites.get(i).getSkipped()), testSuites.get(i).getFailures(), testSuites.get(i).getSkipped(), testSuites.get(i).getErrors() ));
+                stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_AGREGATES, testSuites.get(i).getTests(), testSuites.get(i).getPositive(), testSuites.get(i).getFailures(), testSuites.get(i).getSkipped(), testSuites.get(i).getErrors() ));
 
                 stringHtmlRaport.append(Template.RAPORT_TEST_HEADER);
 
