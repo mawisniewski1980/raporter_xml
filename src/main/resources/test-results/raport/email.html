@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Raport z wykonania testów automatycznych</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body bgcolor="#f0f0f0">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<table cellspacing="1" cellpadding="2" border="0" width="1024px">
+<tr align="left"><td align="center">Raport z wykonania testów automatycznych: <b>2019-08-13 22:25:13</b><hr></td></tr>
+<tr align="left"><td>Ilość testów: <b>51</b>, <font color="green">Testy pozytywne: <b>24</b></font>, <font color="red">Testy negatywne: <b>27</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b><hr></td></tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitCorpoCardsA68Tests</b>, Godzina: <b>2019-07-30T06:14:14</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>276.715</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>7</b>, <font color="green">Testy pozytywne: <b>4</b></font>, <font color="red">Testy negatywne: <b>3</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardLT_A68_418()</td><td>47.127</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have match text 'LT - Card restricted - lost' {a[id='form:csClientStatusHistLink']}
+Element: '<a class="cardInactive" href="#" id="form:csClientStatusHistLink" name="form:csClientStatusHistLink" onclick="jsf.util.chain(this,event,"stopEventPropagation(event)","RichFaces.ajax(\"form:csClientStatusHistLink\",event,{\"incId\":\"1\",\"status\":\"waitStatus\"} )");return false;">Z - Card waiting for production</a>'
+Timeout: 9 s.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardUnregLetterCourierNoMonthLimits_A68_222()</td><td>18.224</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should be not empty {input[id='form:accountOwnerTypeselValue']}
+Element: 'StaleElementReferenceException: stale element reference: element is not attached to the page document'
+Timeout: 30 ms.
+Caused by: StaleElementReferenceException: stale element reference: element is not attached to the page document</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardUnregLetterMonthLimits_A68_350()</td><td>42.321</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {input[id='form:periodLmtInput']}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[id='form:periodLmtInput']"}</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitCorpoCardsA69Tests</b>, Godzina: <b>2019-07-30T06:14:13</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>278.596</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>7</b>, <font color="green">Testy pozytywne: <b>4</b></font>, <font color="red">Testy negatywne: <b>3</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceNoMonthLimits_A69_221()</td><td>46.993</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value '2063' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="2062" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardUnregLetterMonthLimits_A69()</td><td>45.765</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {input[id='form:periodLmtInput']}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[id='form:periodLmtInput']"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceCourierNoMonthLimits_A69_420()</td><td>27.369</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value '2063' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="2062" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitCorpoCardsA70Tests</b>, Godzina: <b>2019-07-30T06:14:13</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>177.483</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>4</b>, <font color="green">Testy pozytywne: <b>1</b></font>, <font color="red">Testy negatywne: <b>3</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceNoMonthLimits_A70_420()</td><td>71.187</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceCourierNoMonthLimits_A70_420()</td><td>18.577</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should be not empty {input[id='form:accountOwnerTypeselValue']}
+Element: 'StaleElementReferenceException: stale element reference: element is not attached to the page document'
+Timeout: 30 ms.
+Caused by: StaleElementReferenceException: stale element reference: element is not attached to the page document</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardUnregLetterMonthLimits_A70_420()</td><td>44.986</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {input[id='form:periodLmtInput']}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[id='form:periodLmtInput']"}</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitCorpoCardsA71Tests</b>, Godzina: <b>2019-07-30T06:17:11</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>294.437</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>9</b>, <font color="green">Testy pozytywne: <b>4</b></font>, <font color="red">Testy negatywne: <b>5</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardCardAddrCourierNoMonthLimits_A71_421()</td><td>53.554</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceNoMonthLimits_A71_819()</td><td>26.778</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value '2067' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="2066" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceCourierNoMonthLimits_A71_819()</td><td>28.364</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value '2067' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="2066" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardCardAddrNoMonthLimits_A71_119()</td><td>22.658</td><td>org.opentest4j.AssertionFailedError</td><td>org.opentest4j.AssertionFailedError: 
+Expecting:
+ <"KRÓL MICHALINA COR">
+to be equal to:
+ <"KRÓL MICHALINA CORP">
+but was not.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardUnregLetterMonthLimits_A71_119()</td><td>36.996</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {input[id='form:periodLmtInput']}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[id='form:periodLmtInput']"}</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitCorpoCardsA72Tests</b>, Godzina: <b>2019-07-30T06:18:50</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>252.255</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>8</b>, <font color="green">Testy pozytywne: <b>5</b></font>, <font color="red">Testy negatywne: <b>3</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>orderDebitCorpoCardCardAddrCourierMonthLimits_A72_421()</td><td>27.382</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value '2068' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="2066" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitCorpoCardSpecPlaceNoMonthLimits_A72_819()</td><td>46.256</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+<tr bgcolor="#cecccc"> <td>orderDebitCorpoCardUnregLetterMonthLimits_A72_421()</td><td>34.744</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {input[id='form:periodLmtInput']}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"input[id='form:periodLmtInput']"}</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA13Tests</b>, Godzina: <b>2019-07-30T06:18:52</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>77.634</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>2</b>, <font color="green">Testy pozytywne: <b>1</b></font>, <font color="red">Testy negatywne: <b>1</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardProxy_A13_229()</td><td>41.153</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA26Tests</b>, Godzina: <b>2019-07-30T06:17:37</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>174.312</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>5</b>, <font color="green">Testy pozytywne: <b>0</b></font>, <font color="red">Testy negatywne: <b>5</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwnerFR_A26_162()</td><td>42.351</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwner_A26_159()</td><td>37.053</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwnerInsurance_A26_159()</td><td>40.671</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwnerMAU_A26_630()</td><td>29.389</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {By.xpath: //tbody[contains(@id,'form:searchedOwnerAccounts')]/tr[contains(.,'2210507265')][contains(.,'MAU')][contains(.,'630')]}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody[contains(@id,'form:searchedOwnerAccounts')]/tr[contains(.,'2210507265')][contains(.,'MAU')][contains(.,'630')]"}</td></tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwnerLayout_A26_159()</td><td>24.847</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value 'Właściciel rachunku' {input[id='form:accountOwnerTypeselValue']}
+Element: '<input id="form:accountOwnerTypeselValue" name="form:accountOwnerType" type="hidden" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA34Tests</b>, Godzina: <b>2019-07-30T06:17:08</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>28.359</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>1</b>, <font color="green">Testy pozytywne: <b>0</b></font>, <font color="red">Testy negatywne: <b>1</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardProxy_A34_693()</td><td>28.359</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value 'A34' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="A38" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA37Tests</b>, Godzina: <b>2019-07-30T06:15:52</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>76.31</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>2</b>, <font color="green">Testy pozytywne: <b>0</b></font>, <font color="red">Testy negatywne: <b>2</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwner_A37_159()</td><td>34.623</td><td>com.codeborne.selenide.ex.ElementShould</td><td>Element should have value 'A37' {input[id='form:productselValue']}
+Element: '<input id="form:productselValue" name="form:product" type="hidden" value="A38" displayed:false></input>'
+Timeout: 9 s.</td></tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwnerKZ_A37_164()</td><td>41.687</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+</table><hr></td>
+</tr>
+<tr align="left"><td>Klasa: <b>pl.ingbank.visiona.tests.pages.part1.DebitDetalCardsA39Tests</b>, Godzina: <b>2019-07-30T06:15:11</b>, Host: <b>WPPLD0002613</b>, Czas wykonania: <b>41.123</b></td></tr>
+<tr align="left"><td>Ilość testów: <b>1</b>, <font color="green">Testy pozytywne: <b>0</b></font>, <font color="red">Testy negatywne: <b>1</b></font>, Testy pominięte: <b>0</b>, Testy błędne: <b>0</b></td></tr>
+<tr align="left">        <td>
+            <table cellspacing="1" cellpadding="2" border="0" width="100%" >
+                <tr bgcolor="#A9A9A9">
+                    <td>Test</td>                    <td>Czas</td>                    <td>Typ</td>                    <td>Błąd</td>                </tr>
+<tr bgcolor="#cecccc"> <td>debitDetalCardOwner_A39_123()</td><td>41.123</td><td>com.codeborne.selenide.ex.ElementNotFound</td><td>Element not found {.msgbox-info}
+Expected: visible
+Timeout: 9 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".msgbox-info"}</td></tr>
+</table><hr></td>
+</tr>
+</table>
+
+<!--<script src="" async defer></script>-->
+</body>
+</html>
