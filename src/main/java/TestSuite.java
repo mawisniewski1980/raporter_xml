@@ -11,6 +11,7 @@ public class TestSuite {
     private String timestamp;
     private String hostname;
     private String time;
+    private String positive;
 
     private List<TestCase> testCases = new ArrayList<>();
 
@@ -32,12 +33,25 @@ public class TestSuite {
         return tests;
     }
 
+    public int getTestsInt() {
+        return Integer.parseInt(getTests());
+    }
+
     public void setTests(String tests) {
         this.tests = tests;
     }
 
+    public String getPositive() {
+        positive = String.valueOf(getTestsInt() - getFailuresInt() - getErrorsInt() - getSkippedInt());
+        return positive;
+    }
+
     public String getSkipped() {
         return skipped;
+    }
+
+    public int getSkippedInt() {
+        return Integer.parseInt(getSkipped());
     }
 
     public void setSkipped(String skipped) {
@@ -48,12 +62,20 @@ public class TestSuite {
         return failures;
     }
 
+    public int getFailuresInt() {
+        return Integer.parseInt(getFailures());
+    }
+
     public void setFailures(String failures) {
         this.failures = failures;
     }
 
     public String getErrors() {
         return errors;
+    }
+
+    public int getErrorsInt() {
+        return Integer.parseInt(getErrors());
     }
 
     public void setErrors(String errors) {
@@ -88,9 +110,6 @@ public class TestSuite {
         return testCases;
     }
 
-/*    public void setTestCases(List<TestCase> testCases) {
-        this.testCases = testCases;
-    }*/
 
     public String getSystemOut() {
         return systemOut;
@@ -120,8 +139,8 @@ public class TestSuite {
                 ", hostname='" + hostname + '\'' +
                 ", time='" + time + '\'' +
                 ", testCases=" + testCases +
-                //", systemOut='" + systemOut + '\'' +
-                //", systemError='" + systemError + '\'' +
+                ", systemOut='" + systemOut + '\'' +
+                ", systemError='" + systemError + '\'' +
                 '}';
     }
 }
