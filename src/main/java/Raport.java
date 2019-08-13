@@ -75,15 +75,36 @@ public class Raport {
         stringHtmlRaport.append(String.format(Template.RAPORT_HEADER, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))));
         stringHtmlRaport.append(String.format(Template.RAPORT_AGREGATES, testsSum, positiveTestSum, failuresSum, skippedSum, errorsSum));
 
-        //dynamic
-        testSuites.forEach(suite -> stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_SUITE, suite.getName(), suite.getTimestamp(), suite.getHostname(), suite.getTime())));
+        for(int i=0; i < testSuites.size(); i++) {
 
-        stringHtmlRaport.append(Template.RAPORT_TEST_HEADER);
+            if(Integer.parseInt(testSuites.get(i).getFailures()) > 0) {
 
-        //dynamic
-        stringHtmlRaport.append(Template.RAPORT_TESTS);
+
+                stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_SUITE, testSuites.get(i).getName(), testSuites.get(i).getTimestamp(), testSuites.get(i).getHostname(), testSuites.get(i).getTime()));
+                stringHtmlRaport.append(String.format(Template.RAPORT_CLASS_AGREGATES, testSuites.get(i).getTests(), Integer.parseInt(testSuites.get(i).getTests())-Integer.parseInt(testSuites.get(i).getFailures())-Integer.parseInt(testSuites.get(i).getErrors())-Integer.parseInt(testSuites.get(i).getSkipped()), testSuites.get(i).getFailures(), testSuites.get(i).getSkipped(), testSuites.get(i).getErrors() ));
+
+                stringHtmlRaport.append(Template.RAPORT_TEST_HEADER);
+
+                for(int j = 0; j < testSuites.get(i).getTestCases().size(); j++) {
+
+                    if(testSuites.get(i).getTestCases().get(j).getMessage() != null) {
+
+                        stringHtmlRaport.append(String.format(Template.RAPORT_TESTS,testSuites.get(i).getTestCases().get(j).getName(),
+                                testSuites.get(i).getTestCases().get(j).getTime(),
+                                testSuites.get(i).getTestCases().get(j).getType(),
+                                testSuites.get(i).getTestCases().get(j).getMessage()));
+                    }
+
+                }
+
+                stringHtmlRaport.append(Template.RAPORT_TEST_FOOTER);
+
+            }
+
+        }
 
         stringHtmlRaport.append(Template.FOOTER_HTML);
+
         return stringHtmlRaport.toString();
     }
 
@@ -126,7 +147,6 @@ public class Raport {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
     }
 }
