@@ -117,8 +117,8 @@ public class Raport {
             Files.createDirectories(path);
             path = Paths.get(this.getPathWrite() + "\\" + EMAIL_FILE_RAPORT);
             Files.deleteIfExists(path);
-            //Files.write(path, raport.getBytes(StandardCharsets.UTF_8));
-            Files.write(path, raport.getBytes());
+            Files.write(path, raport.getBytes(StandardCharsets.UTF_8));
+            //Files.write(path, raport.getBytes());
         } else {
             throw new IOException("Brak danych do raportu");
         }
