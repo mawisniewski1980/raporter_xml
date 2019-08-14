@@ -8,7 +8,7 @@ public class Template {
             "<head>\n" +
             "    <meta charset=\"utf-8\">\n" +
             "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-            "    <title>Raport z wykonania testów automatycznych</title>\n" +
+            "    <title>Raport z wykonania testow automatycznych</title>\n" +
             "    <meta name=\"description\" content=\"\">\n" +
             "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
             "</head>\n" +
@@ -19,13 +19,13 @@ public class Template {
             "\n" +
             "<table cellspacing=\"1\" cellpadding=\"2\" border=\"0\" width=\"1024px\">\n";
 
-    public static String RAPORT_HEADER = "<tr align=\"left\"><td align=\"center\">Raport z wykonania testów automatycznych: <b>%s</b><hr></td></tr>\n";
+    public static String RAPORT_HEADER = "<tr align=\"left\"><td align=\"center\">Raport z wykonania testow automatycznych: <b>%s</b><hr></td></tr>\n";
 
-    public static String RAPORT_AGREGATES = "<tr align=\"left\"><td>Ilość testów: <b>%s</b>, <font color=\"green\">Testy pozytywne: <b>%s</b></font>, <font color=\"red\">Testy negatywne: <b>%s</b></font>, Testy pominięte: <b>%s</b>, Testy błędne: <b>%s</b><hr></td></tr>\n";
+    public static String RAPORT_AGREGATES = "<tr align=\"left\"><td>Ilosc testow: <b>%s</b>, <font color=\"green\">Testy pozytywne: <b>%s</b></font>, <font color=\"red\">Testy negatywne: <b>%s</b></font>, Testy pominiete: <b>%s</b>, Testy bledne: <b>%s</b><hr></td></tr>\n";
 
     public static String RAPORT_CLASS_SUITE = "<tr align=\"left\"><td>Klasa: <b>%s</b>, Godzina: <b>%s</b>, Host: <b>%s</b>, Czas wykonania: <b>%s</b></td></tr>\n";
 
-    public static String RAPORT_CLASS_AGREGATES = "<tr align=\"left\"><td>Ilość testów: <b>%s</b>, <font color=\"green\">Testy pozytywne: <b>%s</b></font>, <font color=\"red\">Testy negatywne: <b>%s</b></font>, Testy pominięte: <b>%s</b>, Testy błędne: <b>%s</b></td></tr>\n";
+    public static String RAPORT_CLASS_AGREGATES = "<tr align=\"left\"><td>Ilosc testow: <b>%s</b>, <font color=\"green\">Testy pozytywne: <b>%s</b></font>, <font color=\"red\">Testy negatywne: <b>%s</b></font>, Testy pominiete: <b>%s</b>, Testy bledne: <b>%s</b></td></tr>\n";
 
     public static String RAPORT_TEST_HEADER = "<tr align=\"left\">" +
             "        <td>\n" +
@@ -34,7 +34,7 @@ public class Template {
             "                    <td>Test</td>" +
             "                    <td>Czas</td>" +
             "                    <td>Typ</td>" +
-            "                    <td>Błąd</td>" +
+            "                    <td>Blad</td>" +
             "                </tr>\n";
 
     public static String RAPORT_TESTS = "<tr bgcolor=\"#cecccc\"> " +
