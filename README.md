@@ -1,6 +1,6 @@
 
-# Raporter XML example
-## Jar to create html 'email.html' file raport with data from xml files junitHtmlReport 
+# Reporter XML example
+## Jar to create html 'email.html' file report with data from xml files junitHtmlReport 
 
 # How to run - command line
 ## java -jar Raporter.jar parametr, parametr e.g. project\src\main\resources\test-results\test
