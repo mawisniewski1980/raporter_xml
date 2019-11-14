@@ -10,6 +10,6 @@
 ## You find one 'email.html' file in C:\project\src\main\resources\test-results\raport
 
 # For what?
-# I used this raport file on Jenkins - Editable Email Notification plugin to add emdded content in email. e.g. 
+# I used this raport file on Jenkins - Editable Email Notification plugin to add embdded content in email. e.g. 
 ## ${FILE,path="/raport/email.html"}
 
